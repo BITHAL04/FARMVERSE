@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 142 76% 32%;
+
+    --secondary: 60 9% 98%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 60 5% 96%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
+
+    --earth-brown: 35 40% 25%;
+    --earth-green: 95 35% 35%;
+    --sage-green: 120 20% 60%;
+    --warm-white: 60 9% 98%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(95 35% 35%));
+    --gradient-earth: linear-gradient(180deg, hsl(35 40% 25%), hsl(95 35% 35%));
+    --gradient-soft: linear-gradient(135deg, hsl(120 20% 60% / 0.1), hsl(142 76% 36% / 0.1));
+    
+    --shadow-soft: 0 4px 6px -1px hsl(142 76% 36% / 0.1);
+    --shadow-glow: 0 0 20px hsl(142 76% 36% / 0.3);
+    --shadow-elevated: 0 10px 25px -3px hsl(142 76% 36% / 0.1);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 20% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 20% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 20% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 210 20% 6%;
+    --primary-hover: 142 76% 50%;
+
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 20% 12%;
+    --muted-foreground: 215 15% 70%;
+
+    --accent: 142 76% 45%;
+    --accent-foreground: 210 20% 6%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 15%;
+    --input: 210 20% 15%;
+    --ring: 142 76% 45%;
+
+    --earth-brown: 35 30% 35%;
+    --earth-green: 95 25% 45%;
+    --sage-green: 120 15% 70%;
+    --warm-white: 0 0% 98%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 45%), hsl(95 25% 45%));
+    --gradient-earth: linear-gradient(180deg, hsl(35 30% 35%), hsl(95 25% 45%));
+    --gradient-soft: linear-gradient(135deg, hsl(120 15% 70% / 0.1), hsl(142 76% 45% / 0.1));
+    
+    --shadow-soft: 0 4px 6px -1px hsl(142 76% 45% / 0.2);
+    --shadow-glow: 0 0 20px hsl(142 76% 45% / 0.4);
+    --shadow-elevated: 0 10px 25px -3px hsl(142 76% 45% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .earth-gradient {
+    background: var(--gradient-earth);
+  }
+  
+  .soft-gradient {
+    background: var(--gradient-soft);
+  }
+  
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+  
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
